@@ -1,0 +1,9 @@
+{
+  "name": "Backlog Clear 2.0 — NEET Quest",
+  "short_name": "Backlog Clear",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#111827",
+  "description": "Game-style NEET 2027 preparation tracker"
+}
