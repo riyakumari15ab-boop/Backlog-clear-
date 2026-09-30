@@ -1,93 +1,26 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#111827">
-<link rel="manifest" href="manifest.json">
-<title>Backlog Clear</title>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111827"><link rel="manifest" href="manifest.json"><title>Backlog Clear 2.0</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#f5f7fb;color:#111827}
-header{background:#111827;color:white;padding:24px 18px 20px;border-radius:0 0 24px 24px}
-h1{margin:0;font-size:27px}.sub{opacity:.75;margin-top:4px}
-main{max-width:720px;margin:auto;padding:16px;padding-bottom:90px}.card{background:white;border-radius:18px;padding:16px;margin:12px 0;box-shadow:0 3px 14px #0000000d}
-.progress{height:10px;background:#e5e7eb;border-radius:99px;overflow:hidden}.bar{height:100%;background:#22c55e;width:0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{padding:12px;background:#f8fafc;border-radius:14px}.stat b{display:block;font-size:20px}.small{font-size:13px;color:#6b7280}
-button,input,select{font:inherit}button{border:0;border-radius:12px;padding:11px 14px;background:#111827;color:white;font-weight:600}
-input,select{width:100%;padding:11px;border:1px solid #d1d5db;border-radius:11px;background:white}
-.row{display:flex;gap:8px;align-items:center}.row>*{flex:1}.task{display:flex;gap:10px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #eee}.task:last-child{border-bottom:0}.task input{width:20px;height:20px}.done{text-decoration:line-through;color:#9ca3af}
-.tabs{position:fixed;bottom:0;left:0;right:0;background:white;border-top:1px solid #e5e7eb;display:flex;justify-content:center;gap:4px;padding:9px 8px calc(9px + env(safe-area-inset-bottom));z-index:5}.tabs button{background:white;color:#6b7280;font-size:12px;padding:8px}.tabs button.active{color:#111827;background:#eef2ff}
-.quote{font-size:17px;font-weight:650;line-height:1.45}.hidden{display:none}.pill{display:inline-block;background:#eef2ff;padding:5px 9px;border-radius:99px;font-size:12px}.danger{background:#fee2e2;color:#991b1b}
-</style>
-</head>
-<body>
-<header><h1>Backlog Clear</h1><div class="sub">NEET 2027 • One day at a time 🎯</div></header>
-<main>
-<section id="home">
-<div class="card"><div class="small">Overall progress</div><h2 id="pct">0%</h2><div class="progress"><div class="bar" id="bar"></div></div></div>
-<div class="grid">
-<div class="stat"><b id="total">0</b><span class="small">Backlog</span></div>
-<div class="stat"><b id="doneCount">0</b><span class="small">Completed</span></div>
-<div class="stat"><b id="streak">0 🔥</b><span class="small">Streak</span></div>
-</div>
-<div class="card"><h3>Today's Plan</h3><div id="today"></div></div>
-<div class="card"><span class="pill">Daily Motivation</span><p class="quote" id="quote"></p><div class="small" id="quoteBy"></div></div>
-</section>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui;background:#0b1020;color:#fff}.app{max-width:720px;margin:auto;padding-bottom:80px}.top{padding:20px;position:sticky;top:0;background:#0b1020ee;z-index:2}.card{margin:10px 14px;padding:16px;border:1px solid #293551;background:#121a2e;border-radius:20px}.hero{background:linear-gradient(135deg,#202b58,#141b31)}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{padding:13px;background:#0f1628;border-radius:15px}.big{font-size:26px;font-weight:900}.muted{color:#9ca8c2}.xp,.bar{height:9px;background:#293551;border-radius:9px;overflow:hidden}.xp i,.bar i{display:block;height:100%;background:linear-gradient(90deg,#765cff,#19d3ae)}button,input,select{font:inherit}button{padding:11px 13px;border:0;border-radius:12px;background:#293551;color:#fff;font-weight:700}input,select{width:100%;padding:11px;margin:5px 0;border-radius:12px;border:1px solid #303b57;background:#0d1424;color:#fff}.tabs{display:flex;gap:6px;overflow:auto;padding:8px 14px}.tabs button{white-space:nowrap}.active{background:#7357ff!important}.section{display:none}.section.active{display:block}.quest{margin:8px 0;padding:12px;border:1px solid #293551;border-radius:14px;background:#10182b}.done{text-decoration:line-through;opacity:.55}.bottom{position:fixed;bottom:0;left:0;right:0;background:#0d1424f2;display:flex;justify-content:center;border-top:1px solid #293551;z-index:5}.bottom button{flex:1;max-width:120px;border-radius:0;background:transparent;color:#9ca8c2}.timer{font-size:58px;text-align:center;font-weight:900;padding:20px}.badge{font-size:12px;padding:5px 8px;background:#293551;border-radius:20px}.small{font-size:12px}h2,h3{margin-top:0}
+</style></head><body>
+<div class="app"><header class="top"><b style="font-size:24px">🎮 Backlog Clear 2.0</b><div class="muted">NEET Quest • Study like a game</div></header>
+<div id="home" class="section active"><div class="card hero"><div class="row"><div><span class="badge">🧑‍🎓 NEET WARRIOR</span><h2 id="level">LEVEL 1</h2></div><div style="text-align:center"><small>NEET COUNTDOWN</small><div class="big" id="days">—</div><small>days</small></div></div><div class="row"><span id="xptext">0/500 XP</span><b id="coins">🪙 0</b></div><div class="xp"><i id="xpbar"></i></div></div>
+<div class="grid"><div class="stat">🔥 Streak<div class="big" id="streak">0</div></div><div class="stat">⏱️ Today<div class="big" id="minutes">0m</div></div><div class="stat">📚 Syllabus<div class="big" id="overall">0%</div></div><div class="stat">🔴 Backlog<div class="big" id="backlog">0</div></div></div>
+<div class="card"><h3>🎯 Today's Quests</h3><div id="today"></div></div><div class="card"><h3>📊 Subjects</h3><div id="subjects"></div></div><div class="card"><h3>💬 Motivation</h3><p id="motivation"></p></div></div>
 
-<section id="backlog" class="hidden">
-<div class="card"><h3>Add Backlog</h3>
-<div class="row"><select id="subject"><option>Physics</option><option>Chemistry</option><option>Biology</option></select><input id="taskInput" placeholder="e.g. Electrostatics lecture"></div>
-<div style="height:8px"></div><button onclick="addTask()">+ Add task</button></div>
-<div class="card"><h3>Your Backlog</h3><div id="tasks"></div></div>
-</section>
-
-<section id="plan" class="hidden">
-<div class="card"><h3>Smart Daily Plan</h3><p class="small">Set your available study hours. Backlog Clear spreads unfinished tasks across your days.</p>
-<input id="hours" type="number" min="1" max="16" value="6">
-<div style="height:8px"></div><button onclick="makePlan()">Create today's plan</button><div id="planOut"></div></div>
-</section>
-
-<section id="focus" class="hidden">
-<div class="card" style="text-align:center"><h3>Focus Timer</h3><div style="font-size:52px;font-weight:750;margin:20px" id="timer">25:00</div>
-<div class="row"><button onclick="startTimer()">Start</button><button onclick="resetTimer()">Reset</button></div><p class="small">Use this for lectures, NCERT or questions.</p></div>
-</section>
-</main>
-<nav class="tabs">
-<button onclick="show('home')" id="bhome" class="active">🏠 Home</button>
-<button onclick="show('backlog')" id="bbacklog">📚 Backlog</button>
-<button onclick="show('plan')" id="bplan">🤖 Plan</button>
-<button onclick="show('focus')" id="bfocus">⏱️ Focus</button>
-</nav>
+<div id="quests" class="section"><div class="card"><h2>⚔️ Quest Board</h2><input id="qt" placeholder="e.g. Revise Electrostatics"><select id="qs"><option>Physics</option><option>Chemistry</option><option>Biology</option></select><button onclick="addQuest()">➕ Add Quest</button><div id="qlist"></div></div></div>
+<div id="syllabus" class="section"><div class="card"><h2>📚 Syllabus Map</h2><p class="muted">Tap chapters as you finish them.</p><div id="slist"></div></div></div>
+<div id="tests" class="section"><div class="card"><h2>👹 Boss Battles</h2><input id="tn" placeholder="Test name"><div class="grid"><input id="ts" type="number" placeholder="Score"><input id="tm" type="number" value="720" placeholder="Max"></div><button onclick="addTest()">⚔️ Record Test</button><div id="tlist"></div><p>Average: <b id="avg">0%</b></p></div></div>
+<div id="focus" class="section"><div class="card" style="text-align:center"><h2>⏱️ Focus Arena</h2><div class="timer" id="timer">25:00</div><button onclick="start()">▶ Start</button> <button onclick="pause()">⏸ Pause</button> <button onclick="resetT()">↺ Reset</button><p class="muted">Earn 2 XP per focused minute.</p></div></div>
+<div id="settings" class="section"><div class="card"><h2>⚙️ Settings</h2><label class="muted small">NEET exam date</label><input id="date" type="date"><p class="muted small">Default is only a planning date. Change it when the official date is announced.</p><button onclick="saveDate()">💾 Save</button><button onclick="resetApp()">Reset app</button></div></div></div>
+<nav class="bottom"><button class="active" onclick="show('home',this)">🏠</button><button onclick="show('quests',this)">⚔️</button><button onclick="show('syllabus',this)">📚</button><button onclick="show('tests',this)">👹</button><button onclick="show('focus',this)">⏱️</button><button onclick="show('settings',this)">⚙️</button></nav>
 <script>
-const quotes=[
-["“Dream, dream, dream. Dreams transform into thoughts and thoughts result in action.”","A. P. J. Abdul Kalam"],
-["“The future depends on what you do today.”","Mahatma Gandhi"],
-["“Success is the sum of small efforts, repeated day in and day out.”","Robert Collier"],
-["“Don’t watch the clock; do what it does. Keep going.”","Sam Levenson"],
-["Your backlog is not bigger than your ability to clear it. Start with one task.","Backlog Clear"]
-];
-let tasks=JSON.parse(localStorage.getItem('bc_tasks')||'[]');
-let streak=+localStorage.getItem('bc_streak')||0;
-function save(){localStorage.setItem('bc_tasks',JSON.stringify(tasks));render()}
-function render(){
- let total=tasks.length, done=tasks.filter(x=>x.done).length, p=total?Math.round(done/total*100):0;
- document.getElementById('total').textContent=total;document.getElementById('doneCount').textContent=done;
- document.getElementById('pct').textContent=p+'%';document.getElementById('bar').style.width=p+'%';document.getElementById('streak').textContent=streak+' 🔥';
- document.getElementById('tasks').innerHTML=tasks.length?tasks.map((t,i)=>`<div class="task"><input type="checkbox" ${t.done?'checked':''} onchange="toggle(${i})"><div style="flex:1"><b class="${t.done?'done':''}">${esc(t.text)}</b><div class="small">${t.subject}</div></div><button class="danger" onclick="del(${i})">×</button></div>`).join(''):'<p class="small">No backlog yet. Add your first task.</p>';
- let pending=tasks.filter(x=>!x.done).slice(0,4);
- document.getElementById('today').innerHTML=pending.length?pending.map(t=>`<div class="task"><span>□</span><div><b>${esc(t.text)}</b><div class="small">${t.subject}</div></div></div>`).join(''):'<p class="small">🎉 Nothing pending. Add your next task!</p>';
- let q=quotes[new Date().getDate()%quotes.length];document.getElementById('quote').textContent=q[0];document.getElementById('quoteBy').textContent='— '+q[1];
-}
-function esc(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function addTask(){let text=document.getElementById('taskInput').value.trim();if(!text)return;tasks.push({text,subject:document.getElementById('subject').value,done:false});document.getElementById('taskInput').value='';save()}
-function toggle(i){tasks[i].done=!tasks[i].done;if(tasks[i].done){streak++;localStorage.setItem('bc_streak',streak)}save()}
-function del(i){tasks.splice(i,1);save()}
-function show(id){['home','backlog','plan','focus'].forEach(x=>document.getElementById(x).classList.toggle('hidden',x!==id));['home','backlog','plan','focus'].forEach(x=>document.getElementById('b'+x).classList.toggle('active',x===id))}
-function makePlan(){let h=Math.max(1,+document.getElementById('hours').value||6), pending=tasks.filter(x=>!x.done), slots=Math.max(1,Math.floor(h*2));let pick=pending.slice(0,slots);document.getElementById('planOut').innerHTML='<h4>Today</h4>'+ (pick.length?pick.map((t,i)=>`<div class="task"><span>${i+1}.</span><div><b>${esc(t.text)}</b><div class="small">${t.subject} • suggested ${Math.round(h*60/pick.length)} min</div></div></div>`).join(''):'<p class="small">No pending tasks.</p>')}
-let sec=1500, interval=null;function paint(){let m=Math.floor(sec/60),s=sec%60;document.getElementById('timer').textContent=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`}
-function startTimer(){if(interval)return;interval=setInterval(()=>{if(sec<=0){clearInterval(interval);interval=null;alert('Focus session complete! 🎉');return}sec--;paint()},1000)}
-function resetTimer(){clearInterval(interval);interval=null;sec=1500;paint()}
-render();paint();
-if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
-</script>
-</body></html>
+const C={Physics:["Units & Measurements","Motion in a Straight Line","Motion in a Plane","Laws of Motion","Work, Energy & Power","System of Particles & Rotational Motion","Gravitation","Thermodynamics","Oscillations","Waves","Electric Charges & Fields","Electrostatic Potential & Capacitance","Current Electricity","Moving Charges & Magnetism","Electromagnetic Induction","Alternating Current","Ray Optics","Wave Optics","Dual Nature of Matter","Atoms","Nuclei","Semiconductor Electronics"],Chemistry:["Some Basic Concepts","Structure of Atom","Chemical Bonding","Thermodynamics","Equilibrium","Redox Reactions","Organic Chemistry Basics","Hydrocarbons","Solutions","Electrochemistry","Chemical Kinetics","p-Block Elements","d- and f-Block Elements","Coordination Compounds","Haloalkanes & Haloarenes","Alcohols, Phenols & Ethers","Aldehydes, Ketones & Carboxylic Acids","Amines","Biomolecules"],Biology:["The Living World","Biological Classification","Plant Kingdom","Animal Kingdom","Morphology of Flowering Plants","Anatomy of Flowering Plants","Cell: The Unit of Life","Biomolecules","Cell Cycle & Cell Division","Transport in Plants","Photosynthesis in Plants","Respiration in Plants","Plant Growth & Development","Digestion & Absorption","Breathing & Exchange of Gases","Body Fluids & Circulation","Neural Control & Coordination","Chemical Coordination & Integration","Human Reproduction","Reproductive Health","Inheritance & Variation","Molecular Basis of Inheritance","Evolution","Human Health & Disease","Microbes in Human Welfare","Biotechnology","Organisms & Populations","Ecosystem","Biodiversity & Conservation"]};
+let s=JSON.parse(localStorage.bc20||"null")||{xp:0,coins:0,streak:0,last:"",minutes:0,quests:[],done:{},tests:[],date:"2027-05-02"};
+function save(){localStorage.bc20=JSON.stringify(s);render()} function day(){return new Date().toISOString().slice(0,10)}
+function addXP(n){s.xp+=n;s.coins+=Math.ceil(n/5)} function level(){return Math.floor(s.xp/500)+1}
+function pct(sub){return Math.round(C[sub].filter((_,i)=>s.done[sub+i]).length/C[sub].length*100)}
+function render(){let d=day();if(s.last!==d){s.streak=s.last?((new Date(d)-new Date(s.last))/864e5===1?s.streak+1:0):1;s.last=d;save();return}document.getElementById("level").textContent="LEVEL "+level();let x=s.xp%500;document.getElementById("xptext").textContent=x+"/500 XP";document.getElementById("xpbar").style.width=x/5+"%";document.getElementById("coins").textContent="🪙 "+s.coins;document.getElementById("streak").textContent=s.streak;document.getElementById("minutes").textContent=s.minutes+"m";let total=Object.values(C).flat().length,done=Object.values(s.done).filter(Boolean).length;document.getElementById("overall").textContent=Math.round(done/total*100)+"%";document.getElementById("backlog").textContent=s.quests.filter(q=>!q.done).length;document.getElementById("days").textContent=Math.max(0,Math.ceil((new Date(s.date)-new Date())/864e5));document.getElementById("date").value=s.date;document.getElementById("motivation").textContent=["Small progress is still progress. Win today.","One chapter at a time. Keep going.","Your focused minutes build your future score.","Consistency beats last-minute panic."][new Date().getDate()%4];document.getElementById("subjects").innerHTML=Object.keys(C).map(k=>`<p><b>${k}</b> ${pct(k)}%</p><div class=bar><i style="width:${pct(k)}%"></i></div>`).join("");document.getElementById("qlist").innerHTML=s.quests.map((q,i)=>`<div class="quest ${q.done?'done':''}"><input type=checkbox ${q.done?'checked':''} onchange="toggleQ(${i})"> ${q.title}<small class=muted> • ${q.sub}</small></div>`).join("")||"<p class=muted>No custom quests.</p>";let u=s.quests.filter(q=>!q.done).slice(0,4);document.getElementById("today").innerHTML=u.map(q=>`<div class=quest>⚔️ ${q.title}<small class=muted> • +50 XP</small></div>`).join("")||"🎉 No custom quests left.";document.getElementById("slist").innerHTML=Object.keys(C).map(k=>`<div class=card style="margin:8px 0"><div class=row><h3>${k}</h3><span class=badge>${pct(k)}%</span></div>${C[k].map((c,i)=>`<div class="quest ${s.done[k+i]?'done':''}"><input type=checkbox ${s.done[k+i]?'checked':''} onchange="chapter('${k}',${i})"> ${c}</div>`).join("")}</div>`).join("");document.getElementById("tlist").innerHTML=s.tests.map(t=>`<div class=quest><b>${t.n}</b> — ${t.sc}/${t.mx} (${Math.round(t.sc/t.mx*100)}%)</div>`).join("");let av=s.tests.length?s.tests.reduce((a,t)=>a+t.sc/t.mx*100,0)/s.tests.length:0;document.getElementById("avg").textContent=Math.round(av)+"%"}
+function addQuest(){let t=qt.value.trim();if(!t)return;s.quests.push({title:t,sub:qs.value,done:false});qt.value="";save()}function toggleQ(i){if(!s.quests[i].done){s.quests[i].done=true;addXP(50)}else s.quests[i].done=false;save()}function chapter(k,i){let z=k+i;if(!s.done[z]){s.done[z]=true;addXP(100)}else s.done[z]=false;save()}function addTest(){if(!tn.value||!tm.value)return;s.tests.unshift({n:tn.value,sc:+ts.value,mx:+tm.value});addXP(150);tn.value="";ts.value="";save()}function saveDate(){s.date=date.value||"2027-05-02";save()}function resetApp(){if(confirm("Reset all data?")){localStorage.removeItem("bc20");location.reload()}}
+function show(id,b){document.querySelectorAll(".section").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll(".bottom button").forEach(x=>x.classList.remove("active"));b.classList.add("active")}
+let sec=1500,t=null;function draw(){timer.textContent=String(Math.floor(sec/60)).padStart(2,"0")+":"+String(sec%60).padStart(2,"0")}function start(){if(t)return;t=setInterval(()=>{if(sec){sec--;if(sec%60===0){s.minutes++;addXP(2);save()}draw()}else pause()},1000)}function pause(){clearInterval(t);t=null}function resetT(){pause();sec=1500;draw()}render();draw();if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js");
+</script></body></html>
